@@ -1,5 +1,5 @@
 Config = Config or {}
-Config.CameraHook = "https://discordapp.com/api/webhooks/1031246990291517461/Omk_knmfPjwt86xJHEVIn18QVoSFvQRSZopGIuCNgpvA_vfO4P3WPF22COEIDxW_xCMO"
+Config.CameraHook = "DISCORD_WEBHOOK_HERE"
 Config.BillingCommissions = { -- This is a percentage (0.10) == 10%
     mechanic = 0.10,
 	burgershot = 0.10,
