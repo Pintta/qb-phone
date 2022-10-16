@@ -1,4 +1,4 @@
-local QBCore = exports['Revohka']:GetCoreObject()
+local QBCore = exports['qb-core']:GetCoreObject()
 local QBPhone = {}
 local AppAlerts = {}
 local MentionedTweets = {}
