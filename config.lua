@@ -100,7 +100,7 @@ Config.PhoneApplications = {
         slot = 8,
         Alerts = 0,
     },
-  --[[  ["crypto"] = {
+    ["crypto"] = {
         app = "crypto",
         color = "#004682",
         icon = "fas fa-coins",
@@ -109,7 +109,7 @@ Config.PhoneApplications = {
         blockedjobs = {},
         slot = 9,
         Alerts = 0,
-    },--]]
+    },
     ["racing"] = {
         app = "racing",
         color = "#353b48",
@@ -174,22 +174,6 @@ Config.PhoneApplications = {
         Alerts = 0,
     },
 }
-Config.MaxSlots = 20
 
-Config.StoreApps = {
-    ["territory"] = {
-        app = "territory",
-        color = "#353b48",
-        icon = "fas fa-globe-europe",
-        tooltipText = "Territorium",
-        tooltipPos = "right",
-        style = "";
-        job = false,
-        blockedjobs = {},
-        slot = 15,
-        Alerts = 0,
-        password = true,
-        creator = "QBCore",
-        title = "Territory",
-    },
-}
+Config.MaxSlots = 20
+Config.StoreApps = {}
