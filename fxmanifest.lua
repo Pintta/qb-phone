@@ -1,8 +1,6 @@
 fx_version 'cerulean'
 game 'gta5'
 
-ui_page 'html/index.html'
-
 shared_scripts {
     'config.lua',
     '@qb-apartments/config.lua',
@@ -18,6 +16,8 @@ server_scripts {
     '@oxmysql/lib/MySQL.lua',
     'server/main.lua',
 }
+
+ui_page 'html/index.html'
 
 files {
     'html/*.html',
