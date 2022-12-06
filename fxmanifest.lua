@@ -1,6 +1,6 @@
 fx_version 'cerulean'
 game 'gta5'
-
+lua54 'yes'
 shared_scripts {
     'config.lua',
     '@qb-apartments/config.lua',
@@ -30,5 +30,3 @@ files {
     'html/img/backgrounds/*.png',
     'html/img/apps/*.png',
 }
-
-lua54 'yes'
