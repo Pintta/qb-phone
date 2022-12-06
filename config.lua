@@ -1,15 +1,13 @@
 Config = Config or {}
 Config.CameraHook = "DISCORD_WEBHOOK_HERE"
-Config.BillingCommissions = { -- This is a percentage (0.10) == 10%
-    mechanic = 0.10,
-	burgershot = 0.10,
-	catcafe = 0.10,
-	pizzathis = 0.10,
-	vanilla = 0.10,
-	popsdiner = 0.10
+Config.BillingCommissions = {
+	mechanic = 0.05,
+	police = 0.05,
+	ambulance = 0.05,
+	taxi = 0.30
 }
-Config.Linux = false -- True if linux
-Config.TweetDuration = 12 -- How many hours to load tweets (12 will load the past 12 hours of tweets)
+Config.Linux = false
+Config.TweetDuration = 48
 Config.RepeatTimeout = 2000
 Config.CallRepeats = 10
 Config.OpenPhone = 244
@@ -108,16 +106,6 @@ Config.PhoneApplications = {
         job = false,
         blockedjobs = {},
         slot = 9,
-        Alerts = 0,
-    },
-    ["racing"] = {
-        app = "racing",
-        color = "#353b48",
-        icon = "fas fa-flag-checkered",
-        tooltipText = "Racing",
-        job = false,
-        blockedjobs = {},
-        slot = 10,
         Alerts = 0,
     },
     ["houses"] = {
