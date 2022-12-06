@@ -16,7 +16,7 @@ local function CheckAnimLoop()
                 LoadAnimation(PhoneData.AnimationData.lib)
                 TaskPlayAnim(ped, PhoneData.AnimationData.lib, PhoneData.AnimationData.anim, 3.0, 3.0, -1, 50, 0, false, false, false)
             end
-            Wait(500)
+            --Wait(500)
         end
     end)
 end
