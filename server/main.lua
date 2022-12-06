@@ -9,8 +9,6 @@ local GeneratedPlates = {}
 local bannedCharacters = {'%','$',';'}
 local TWData = {}
 
--- Functions
-
 local function GetOnlineStatus(number)
     local Target = QBCore.Functions.GetPlayerByPhone(number)
     local retval = false
@@ -432,7 +430,7 @@ QBCore.Functions.CreateCallback('qb-phone:server:GetVehicleSearchResults', funct
                 status = GeneratedPlates[search].status,
                 owner = GeneratedPlates[search].owner,
                 citizenid = GeneratedPlates[search].citizenid,
-                label = "Brand unknown.."
+                label = 'Error 404'
             }
         else
             local ownerInfo = GenerateOwnerName()
@@ -447,7 +445,7 @@ QBCore.Functions.CreateCallback('qb-phone:server:GetVehicleSearchResults', funct
                 status = true,
                 owner = ownerInfo.name,
                 citizenid = ownerInfo.citizenid,
-                label = "Brand unknown.."
+                label = 'Error 404'
             }
         end
     end
@@ -880,32 +878,22 @@ RegisterNetEvent('qb-phone:server:UpdateMessages', function(ChatMessages, ChatNu
         if TargetData ~= nil then
             local Chat = MySQL.query.await('SELECT * FROM phone_messages WHERE citizenid = ? AND number = ?', {SenderData.PlayerData.citizenid, ChatNumber})
             if Chat[1] ~= nil then
-                -- Update for target
                 MySQL.update('UPDATE phone_messages SET messages = ? WHERE citizenid = ? AND number = ?', {json.encode(ChatMessages), TargetData.PlayerData.citizenid, SenderData.PlayerData.charinfo.phone})
-                -- Update for sender
                 MySQL.update('UPDATE phone_messages SET messages = ? WHERE citizenid = ? AND number = ?', {json.encode(ChatMessages), SenderData.PlayerData.citizenid, TargetData.PlayerData.charinfo.phone})
-                -- Send notification & Update messages for target
                 TriggerClientEvent('qb-phone:client:UpdateMessages', TargetData.PlayerData.source, ChatMessages, SenderData.PlayerData.charinfo.phone, false)
             else
-                -- Insert for target
                 MySQL.insert('INSERT INTO phone_messages (citizenid, number, messages) VALUES (?, ?, ?)', {TargetData.PlayerData.citizenid, SenderData.PlayerData.charinfo.phone, json.encode(ChatMessages)})
-                -- Insert for sender
                 MySQL.insert('INSERT INTO phone_messages (citizenid, number, messages) VALUES (?, ?, ?)', {SenderData.PlayerData.citizenid, TargetData.PlayerData.charinfo.phone, json.encode(ChatMessages)})
-                -- Send notification & Update messages for target
                 TriggerClientEvent('qb-phone:client:UpdateMessages', TargetData.PlayerData.source, ChatMessages, SenderData.PlayerData.charinfo.phone, true)
             end
         else
             local Chat = MySQL.query.await('SELECT * FROM phone_messages WHERE citizenid = ? AND number = ?', {SenderData.PlayerData.citizenid, ChatNumber})
             if Chat[1] ~= nil then
-                -- Update for target
                 MySQL.update('UPDATE phone_messages SET messages = ? WHERE citizenid = ? AND number = ?', {json.encode(ChatMessages), Player[1].citizenid, SenderData.PlayerData.charinfo.phone})
-                -- Update for sender
                 Player[1].charinfo = json.decode(Player[1].charinfo)
                 MySQL.update('UPDATE phone_messages SET messages = ? WHERE citizenid = ? AND number = ?', {json.encode(ChatMessages), SenderData.PlayerData.citizenid, Player[1].charinfo.phone})
             else
-                -- Insert for target
                 MySQL.insert('INSERT INTO phone_messages (citizenid, number, messages) VALUES (?, ?, ?)', {Player[1].citizenid, SenderData.PlayerData.charinfo.phone, json.encode(ChatMessages)})
-                -- Insert for sender
                 Player[1].charinfo = json.decode(Player[1].charinfo)
                 MySQL.insert('INSERT INTO phone_messages (citizenid, number, messages) VALUES (?, ?, ?)', {SenderData.PlayerData.citizenid, Player[1].charinfo.phone, json.encode(ChatMessages)})
             end
@@ -985,8 +973,6 @@ RegisterNetEvent('qb-phone:server:InstallApplication', function(ApplicationData)
     local Player = QBCore.Functions.GetPlayer(src)
     Player.PlayerData.metadata["phonedata"].InstalledApps[ApplicationData.app] = ApplicationData
     Player.Functions.SetMetaData("phonedata", Player.PlayerData.metadata["phonedata"])
-
-    -- TriggerClientEvent('qb-phone:RefreshPhone', src)
 end)
 
 RegisterNetEvent('qb-phone:server:RemoveInstallation', function(App)
@@ -994,8 +980,6 @@ RegisterNetEvent('qb-phone:server:RemoveInstallation', function(App)
     local Player = QBCore.Functions.GetPlayer(src)
     Player.PlayerData.metadata["phonedata"].InstalledApps[App] = nil
     Player.Functions.SetMetaData("phonedata", Player.PlayerData.metadata["phonedata"])
-
-    -- TriggerClientEvent('qb-phone:RefreshPhone', src)
 end)
 
 RegisterNetEvent('qb-phone:server:addImageToGallery', function(image)
@@ -1025,8 +1009,6 @@ RegisterNetEvent('qb-phone:server:sendPing', function(data)
     end
 end)
 
--- Command
-
 QBCore.Commands.Add("setmetadata", "Set Player Metadata (God Only)", {}, false, function(source, args)
     local Player = QBCore.Functions.GetPlayer(source)
     if args[1] then
@@ -1048,10 +1030,7 @@ QBCore.Commands.Add('bill', 'Bill A Player', {{name = 'id', help = 'Player ID'},
         if billed ~= nil then
             if biller.PlayerData.citizenid ~= billed.PlayerData.citizenid then
                 if amount and amount > 0 then
-                    MySQL.insert(
-                        'INSERT INTO phone_invoices (citizenid, amount, society, sender, sendercitizenid) VALUES (?, ?, ?, ?, ?)',
-                        {billed.PlayerData.citizenid, amount, biller.PlayerData.job.name,
-                         biller.PlayerData.charinfo.firstname, biller.PlayerData.citizenid})
+                    MySQL.insert('INSERT INTO phone_invoices (citizenid, amount, society, sender, sendercitizenid) VALUES (?, ?, ?, ?, ?)', {billed.PlayerData.citizenid, amount, biller.PlayerData.job.name, biller.PlayerData.charinfo.firstname, biller.PlayerData.citizenid})
                     TriggerClientEvent('qb-phone:RefreshPhone', billed.PlayerData.source)
                     TriggerClientEvent('QBCore:Notify', source, 'Invoice Successfully Sent', 'success')
                     TriggerClientEvent('QBCore:Notify', billed.PlayerData.source, 'New Invoice Received')
