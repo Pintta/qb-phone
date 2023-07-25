@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="./css/trucker.css">
     <link rel="stylesheet" href="./css/gallery.css">
     <link rel="stylesheet" href="./css/camera.css">
-
+    <link rel="stylesheet" href="./css/calculator.css">
     <!-- CDN's -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script> <!-- JQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js" integrity="sha512-hkvXFLlESjeYENO4CNi69z3A1puvONQV5Uh+G4TUDayZxSLyic5Kba9hhuiNLbHqdnKNMk2PxXKm0v7KDnWkYA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -556,18 +556,12 @@
 
                         <div class="crypto-action-page">
                             <div class="crypto-action-page-buy-crypto">
-
                                 <div class="crypto-action-page-header">Buy Qbit</div>
-
                                 <div class="crypto-action-page-wallet">Wallet: 1.000500 Qbit('s)</div>
-
                                 <i class="crypto-action-page-buy-crypto-input-coins-icon fas fa-coins"></i>
                                 <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-buy-crypto-input-coins" required spellcheck="false" placeholder="1.000000" step="0.000001" min="0">
-
                                 <i class="crypto-action-page-buy-crypto-input-money-icon fas fa-dollar-sign"></i>
-                                <!-- <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-buy-crypto-input-money" required spellcheck="false" placeholder="1000" step="1.0" min="0"> -->
                                 <div class="crypto-action-page-buy-crypto-input-money">0 Dollars</div>
-
                                 <div class="crypto-action-page-buy-crypto-footer">
                                     <div class="crypto-action-page-buy-crypto-footer-button" id="buy-crypto">
                                         <i class="fas fa-check-circle"></i>
@@ -578,18 +572,12 @@
                                 </div>
                             </div>
                             <div class="crypto-action-page-sell-crypto">
-
                                 <div class="crypto-action-page-header">Sell Qbit</div>
-
                                 <div class="crypto-action-page-wallet">Wallet: 1.000500 Qbit('s)</div>
-
                                 <i class="crypto-action-page-sell-crypto-input-coins-icon fas fa-coins"></i>
                                 <input type="number" oninput="this.value = Math.abs(this.value)" class="crypto-action-page-sell-crypto-input-coins" required spellcheck="false" placeholder="1.000000" step="0.000001" min="0">
-
                                 <i class="crypto-action-page-sell-crypto-input-money-icon fas fa-dollar-sign"></i>
-                                <!-- <input type="number" onchange="this.value = Math.abs(this.value)" class="crypto-action-page-sell-crypto-input-money" required spellcheck="false" placeholder="1000" step="1.0" min="0"> -->
                                 <div class="crypto-action-page-sell-crypto-input-money">0 Dollars</div>
-
                                 <div class="crypto-action-page-buy-crypto-footer">
                                     <div class="crypto-action-page-buy-crypto-footer-button" id="sell-crypto">
                                         <i class="fas fa-check-circle"></i>
@@ -600,17 +588,12 @@
                                 </div>
                             </div>
                             <div class="crypto-action-page-transfer-crypto">
-
                                 <div class="crypto-action-page-header">Transfer Qbit</div>
-
                                 <div class="crypto-action-page-wallet">Wallet: 0 Qbit('s)</div>
-
                                 <i class="crypto-action-page-transfer-crypto-input-coins-icon fas fa-coins"></i>
                                 <input type="number" onchange="this.value = Math.abs(this.value)" class="crypto-action-page-transfer-crypto-input-coins" required spellcheck="false" placeholder="1.000000" step="0.000001" min="0">
-
                                 <i class="crypto-action-page-transfer-crypto-input-money-icon fas fa-address-book"></i>
                                 <input type="texts" class="crypto-action-page-transfer-crypto-input-walletid" required spellcheck="false" placeholder="QB-12345678">
-
                                 <div class="crypto-action-page-buy-crypto-footer">
                                     <div class="crypto-action-page-buy-crypto-footer-button" id="transfer-crypto">
                                         <i class="fas fa-check-circle"></i>
@@ -621,7 +604,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="crypto-page">
                             <div class="cryptotab-general">
                                 <div class="cryptotab-general-actions">
@@ -643,26 +625,22 @@
                                 </div>
                                 <span class="crypto-walletid">Wallet ID: QB-12345678</span>
                             </div>
-
                             <div class="cryptotab-transactions">
                                 <div class="cryptotab-transactions-list">
                                 </div>
                             </div>
-
                             <div class="cryptotab-course">
                                 <div class="cryptotab-course-list">
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="meos-app">
                         <input type="text" id="testerino">
                         <div class="meos-app-header">
                             <span id="meos-app-title">MDT</span>
                             <span id="meos-app-name">Welcome Jay Nandes</span>
                         </div>
-
                         <div class="meos-homescreen">
                             <div class="meos-blocks">
                                 <div class="meos-block" data-meosblock="person">
@@ -682,35 +660,26 @@
                                     <p>Alerts</p>
                                 </div>
                             </div>
-
                             <span class="meos-recent-header">Most recent alert</span>
                             <div class="meos-recent-alerts">
                                 <div class="meos-recent-alert"> <span class="meos-recent-alert-title">You don't have any alerts!</span></div>
                             </div>
                         </div>
-
                         <div class="meos-tabs">
                             <div class="meos-person-page">
                                 <input class="person-search-input" type="text" spellcheck="false" required>
                                 <div class="confirm-search-person-test" id="search-pers">
                                     <i class="fas fa-search"></i>
                                 </div>
-
-                                <div class="person-search-results">
-                                </div>
+                                <div class="person-search-results"></div>
                             </div>
-
                             <div class="meos-houses-page">
                                 <input class="person-search-input-house" type="text" spellcheck="false" required>
                                 <div class="confirm-search-person-house">
                                     <i class="fas fa-search"></i>
                                 </div>
-
-                                <div class="person-search-results">
-
-                                </div>
+                                <div class="person-search-results"></div>
                             </div>
-
                             <div class="meos-vehicle-page">
                                 <input class="vehicle-search-input" type="text" spellcheck="false" required>
                                 <div class="confirm-search-vehicle">
@@ -719,46 +688,35 @@
                                 <div class="scan-search-vehicle">
                                     <i class="fas fa-barcode"></i>
                                 </div>
-
-                                <div class="vehicle-search-results">
-                                    <!-- <div class="vehicle-search-result"> <div class="vehicle-search-result-name">T20</div> <div class="vehicle-search-result-plate">Kenteken: NL123456</div> <div class="vehicle-opensplit"></div> &nbsp; <div class="vehicle-search-result-owner">Eigenaar: Jay Nandes</div> &nbsp; <div class="vehicle-search-result-apk">APK: Ja</div> <div class="vehicle-search-result-warrant">Gesignaleerd: Ja</div> </div> -->
-                                </div>
+                                <div class="vehicle-search-results"></div>
                             </div>
-
                             <div class="meos-alerts-page">
                                 <div class="meos-clear-alerts">CLEAR</div>
                                 <div class="meos-alerts">
                                 </div>
                             </div>
-
                             <div class="meos-tabs-footer">
                                 <i class="fas fa-undo-alt" id="back-meos"></i>
                             </div>
                         </div>
                     </div>
-
                     <div class="advert-app">
                         <div class="advert-home">
                             <div class="advert-header">
                                 <span id="advert-header-text">Advertisements</span>
                                 <span id="advert-header-name"></span>
                             </div>
-                            <div class="advert-list">
-
-                            </div>
+                            <div class="advert-list"></div>
                             <div class="test-slet">
                                 <i class="fas fa-plus test-icon"></i>
                             </div>
                         </div>
-
                         <div class="new-advert">
                             <div class="new-advert-header">
                                 <span id="new-advert-header-text">New advertisement</span>
                             </div>
-
                             <textarea class="new-advert-textarea" spellcheck="false" required></textarea>
                             <span><textarea id="advert-new-url" style="text-align:left; padding-left:15px;" placeholder="Picture URL" cols="30" rows="10" spellcheck="false"></textarea></span>
-
                             <div class="new-advert-footer">
                                 <div class="new-advert-footer-item" id="new-advert-submit">
                                     <i class="fas fa-check-circle new-advert-icon"></i>
@@ -772,7 +730,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="mail-app">
                         <div class="mail-home">
                             <div class="mail-header">
@@ -780,20 +737,16 @@
                                 <span id="mail-header-mail">jay.nandes@qbcore.com</span>
                                 <span id="mail-header-lastsync">Last synchronization 18:31</span>
                             </div>
-
                             <div class="mail-list">
                             </div>
                         </div>
-
                         <div class="opened-mail">
                             <div class="opened-mail-header">
                                 <div class="mail-back"><i class="fas fa-chevron-left" id="mail-back"></i></div>
                                 <div class="mail-subject"><p>Subject</p></div>
                                 <div class="mail-date"><p>19 February 2019 &nbsp; 08:19</p></div>
                                 <div class="mail-spacing"></div>
-                                <div class="mail-content"><p>
-                                    This is a test mail and will not be fully shown because thats what I'm testing.
-                                </p></div>
+                                <div class="mail-content"></div>
                             </div>
                             <div class="opened-mail-footer">
                                 <div class="opened-mail-footer-item">
@@ -805,45 +758,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <div class="store-app">
-                        <div class="store-header">
-                            <p>App Store</p>
-                        </div>
-                        <div class="store-apps">
-                            <div class="storeapp" data-app="territory">
-                                <div class="storeapp-icon">
-                                    <i class="fas fa-globe-europe"></i>
-                                </div>
-                                <div class="storeapp-title">
-                                    Territory
-                                </div>
-                                <div class="storeapp-creator">
-                                    Qbus
-                                </div>
-                                <div class="storeapp-download">
-                                    <i class="fas fa-download"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="download-password-container">
-                            <div class="download-password">
-                                <span id="download-password-title">Security</span>
-                                <span id="download-password-disclaimer">To download this application you must enter a password.</span>
-                                <input type="text" class="download-password-input" spellcheck="false" required>
-
-                                <div class="download-password-buttons">
-                                    <div class="download-password-accept"><i class="fas fa-check"></i></div>
-                                    <div class="download-password-deny"><i class="fas fa-times"></i></div>
-                                </div>
-
-                                <div class="download-progressbar">
-                                    <div class="download-progressbar-fill"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <div class="racing-app"><!--TEST AREA-->
                         <iframe name="I1" id="if1" width="100%" 
                             height="654" style="visibility:visible" 
@@ -879,17 +793,13 @@
                             </form>
                         </div>
                     </div>
-
                     <div class="twitter-app">
-
                         <div class="twitter-home-tab">
                              <div class="twitter-no-tweets"><p>No tweets</p></div>
                         </div>
-
                         <div class="twitter-mentions-tab">
                             <div class="twitter-no-tweets"><p>No mentions</p></div>
                         </div>
-
                         <div class="twitter-hashtags-tab">
                             <div class="twitter-hashtag-tweets">
                                 <div class="twitter-tweet">
@@ -899,14 +809,11 @@
                                 <div class="twitter-no-tweets"><p>No hashtags</p></div>
                             </div>
                         </div>
-
                         <div class="twitter-new-tweet">
                             <i class="fas fa-feather-alt"></i>
                         </div>
-
                         <div class="twitter-new-tweet-tab">
                             <div class="twitter-new-tweet-header"><p>New Tweet</p></div>
-
                             <textarea id="tweet-new-message" placeholder="Twitter message" cols="30" rows="10" spellcheck="false" required></textarea>
                             <span><textarea id="tweet-new-url" style="text-align:left; padding-left:15px;" placeholder="Picture URL" cols="30" rows="10" spellcheck="false"></textarea></span>
                             <div class="twitter-new-tweet-buttons">
@@ -915,14 +822,12 @@
                                 <div class="twitter-new-tweet-button" id="cancel-tweet"><p>Cancel</p></div>
                             </div>
                         </div>
-
                         <div class="twitter-header">
                             <div id="twitter-home" data-twittertab="twitter-home" class="twitter-header-tab selected-twitter-header-tab"><i class="fas fa-home"></i></div>
                             <div id="twitter-mentions" data-twittertab="twitter-mentions" class="twitter-header-tab"><i class="fas fa-at"></i></div>
                             <div id="twitter-hashtags" data-twittertab="twitter-hashtags" class="twitter-header-tab"><i class="fas fa-hashtag"></i></div>
                         </div>
                     </div>
-
                     <div class="bank-app">
                         <div class="bank-app-loading">
                             <img src="../html/img/apps/bank-logo.png" class="qbank-logo">
@@ -933,55 +838,43 @@
                                 <div data-headertype="accounts" class="bank-app-header-button bank-app-header-button-selected"> <i class="fas fa-align-left"></i> <p>Accounts</p> </div>
                                 <div data-headertype="invoices" class="bank-app-header-button"> <i class="fas fa-file-invoice"></i> <p>Invoices</p> </div>
                             </div>
-
                             <div class="bank-app-accounts">
                                 <div class="bank-app-account">
                                     <div class="bank-app-account-title">Account</div>
-                                    <!-- <div class="bank-app-account-number" id="iban-account">NL01QBBA012341234123</div> -->
                                     <input type="text" class="bank-app-account-number" id="iban-account" readonly spellcheck="false">
                                     <div class="bank-app-account-balance">&#36; 5000,00</div>
                                 </div>
-
                                 <div class="bank-app-account-actions">
                                     <i id="transfer-money" class="fas fa-exchange-alt bank-app-account-action-transfer"></i>
                                 </div>
                             </div>
-
                             <div class="bank-app-transfer">
                                 <div class="bank-app-transfer-header">Transfer Money</div>
-
                                 <i class="bank-transfer-iban-icon fas fa-credit-card"></i>
                                 <input type="text" id="bank-transfer-iban" class="bank-transfer-input" required spellcheck="false">
                                 <i class="bank-transfer-mycontacts-icon fas fa-address-book"></i>
-
                                 <i class="bank-transfer-amount-icon fas fa-dollar-sign"></i>
                                 <input type="number" min="0" oninput="this.value = Math.abs(this.value)" id="bank-transfer-amount" class="bank-transfer-input" required spellcheck="false">
-
                                 <div class="bank-app-transfer-buttons">
                                     <div class="bank-app-transfer-button" id="accept-transfer">Transfer</div>
                                     <div class="bank-app-transfer-button" id="cancel-transfer">Cancel</div>
                                 </div>
                             </div>
-
                             <div class="bank-app-invoices">
                                 <div class="bank-app-invoices-list">
-                                    <!-- <div class="bank-app-invoice"> <div class="bank-app-invoice-title">Betaalverzoek <span style="font-size: 1vh; color: gray;">(Afzender: 0612345678)</span></div> <div class="bank-app-invoice-amount">&#36; 5000,-</div> <div class="bank-app-invoice-buttons"> <i class="fas fa-check-circle pay-invoice"></i> <i class="fas fa-times-circle decline-invoice"></i> </div> </div> -->
                                 </div>
                             </div>
                         </div>
-
                         <div class="bank-app-my-contacts">
                             <div class="bank-app-my-contacts-header">My Contacts</div>
                             <div class="bank-app-my-contacts-list-header">
                                 <input type="text" id="bank-app-my-contact-search" placeholder="Contact name" spellcheck="false">
                             </div>
                             <div class="bank-app-my-contacts-list">
-                                <!-- <div class="bank-app-my-contact"> <div class="bank-app-my-contact-firstletter">P</div> <div class="bank-app-my-contact-name">Pieter Post</div> </div> -->
                             </div>
                             <div class="bank-app-my-contacts-list-back">Return</div>
                         </div>
                     </div>
-
                     <div class="whatsapp-app">
                         <div class="whatsapp-header">
                             <div class="whatsapp-header-top"></div>
@@ -1017,14 +910,11 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="phone-currentcall-container">
                     <div class="phone-currentcall-icon"><i class="fas fa-phone"></i></div>
                     <div class="phone-currentcall-title">Outgoing call</div>
                     <div class="phone-currentcall-contact">with 0612345678</div>
                 </div>
-
-                <!-- Phone Home Button -->
                 <div class="phone-footer">
                     <div class="phone-home-container">
                         <div class="phone-home-button"></div>
@@ -1032,20 +922,16 @@
                 </div>
             </div>
         </div>
-
         <div class="screen-notifications-container">
             <div class="screen-notification-icon"><i class="fab fa-twitter"></i></div>
             <div class="screen-notification-title"><p>New Tweet!</p></div>
             <div class="screen-notification-content"><p>This is a test notification </p></div>
         </div>
-
         <div class="call-notifications">
             <div class="call-notifications-icon"><i class="fas fa-phone"></i></div>
             <div class="call-notifications-title"><p>Incoming Call</p></div>
             <div class="call-notifications-content"><p>You have an incoming call from Test</p></div>
         </div>
-
-        <!-- JavaScript File's -->
         <script src="./js/config.js"></script>
         <script src="./js/app.js"></script>
         <script src="./js/settings.js"></script>
@@ -1064,6 +950,7 @@
         <script src="./js/trucker.js"></script>
         <script src="./js/gallery.js"></script>
         <script src="./js/camera.js"></script>
+        <script src="./js/calculator.js"></script>
         <script type="text/javascript">$('#whatsapp-openedchat-message').emojioneArea({inline: true, searchPosition: "bottom", shortnames: true})</script>
         <!-- <script type="text/javascript">$('#tweet-new-message').emojioneArea({pickerPostion: 'bottom' ,inline: true, shortnames: true})</script> -->
     </body>
