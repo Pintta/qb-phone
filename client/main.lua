@@ -282,7 +282,7 @@ local function OpenPhone()
                 PlayerData = PhoneData.PlayerData,
             })
             PhoneData.isOpen = true
-
+		SetNuiFocusKeepInput(true) -- You can use your phone while walking
             CreateThread(function()
                 while PhoneData.isOpen do
                     DisableDisplayControlActions()
