@@ -5,5 +5,6 @@ FIXED:
 - Camera loop
 - You can use your phone while walking
 - Added new SQL file
+- Fit scripts
 
-Updated 17.09.2023
+Updated 12.10.2023
