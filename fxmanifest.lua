@@ -7,10 +7,7 @@ shared_scripts {
     '@qb-garages/config.lua',
 }
 
-client_scripts {
-    'client/main.lua',
-    'client/animation.lua',
-}
+client_script 'client/*.lua'
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
